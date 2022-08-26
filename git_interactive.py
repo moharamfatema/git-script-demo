@@ -6,7 +6,6 @@ from encodings.utf_8 import decode
 import os
 from subprocess import PIPE, run
 
-# first store the repo owner and repo name
 def yes_no(prompt):
     while(1):
         inp = input(f"{prompt} (y/n)\n")
@@ -16,6 +15,7 @@ def yes_no(prompt):
             return False
 
 
+# first store the repo owner and repo name
 if 'info.txt' not in os.listdir('.'):
     repo_owner = input("Enter the repo owner username:\n")
     repo_name = input("Enter the repo name:\n")
