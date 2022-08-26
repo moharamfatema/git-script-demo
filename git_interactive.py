@@ -14,6 +14,18 @@ def yes_no(prompt):
         elif inp == 'n' :
             return False
 
+def convert():
+    if 'convert.txt' in os.listdir('.'):
+        with open('convert.txt','r') as f:
+            for filename in f.readlines():
+                filename = filename[:-1]
+                outfile = f'{filename.split(".")[0]}.py'
+                print(run([
+                    'colab-convert',
+                    filename,
+                    outfile,
+                    "-l=en"
+                ]))
 
 # first store the repo owner and repo name
 if 'info.txt' not in os.listdir('.'):
@@ -75,10 +87,15 @@ if remote_name not in decode(out.stdout)[0]:
         remote
     ]))
 
-
+# convert
+if yes_no("Convert notebooks in convert.txt?"):
+    convert()
+    
 # sync
 
 if yes_no("Do you want me to sync changes?"):
+
+
     msg = input("Commit message:\n")
     branch = input("Branch name:\n")
 

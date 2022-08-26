@@ -1,1 +1,7 @@
 token.txt
+*.ipynb
+*.log
+*.cfg
+include
+Lib
+Scripts
