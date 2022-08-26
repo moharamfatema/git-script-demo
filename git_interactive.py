@@ -1,5 +1,5 @@
 """
-A script to facilitate version control usage with google colab (or any platform) using git personal tokens
+A script to facilitate version control usage with google colab (or any platform) using git personal tokens and colab-convert
 """
 
 from encodings.utf_8 import decode
@@ -90,7 +90,7 @@ if remote_name not in decode(out.stdout)[0]:
 # convert
 if yes_no("Convert notebooks in convert.txt?"):
     convert()
-    
+
 # sync
 
 if yes_no("Do you want me to sync changes?"):
