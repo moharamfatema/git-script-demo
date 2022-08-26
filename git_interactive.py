@@ -60,8 +60,6 @@ out = run([
     '-v'
 ],stdout=PIPE)
 
-print(out)
-
 remote_name = f'{username}-origin'
 
 if remote_name not in decode(out.stdout)[0]:
